@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no,viewport-fit=cover">
+  <van-number-keyboard safe-area-inset-bottom />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <!-- <script src="https://mediaws.juneyaoair.com/annualbill/js/landScape.js?dt=0101"></script> -->
+  <script type="text/javascript" src="<%= BASE_URL %>static/landScape.js?dt=02"></script>
+  <script>
+    window.onbeforeunload = function () {
+      console.log("===onbeforeunload===")
+      if (event.clientX > document.body.clientWidth && event.clientY < 0 || event.altKey) {
+        console.log("你关闭了浏览器")
+      } else {
+        console.log("你正在刷新页面")
+      }
+    } 
+  </script>
+</body>
+
+</html>
