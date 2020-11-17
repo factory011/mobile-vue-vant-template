@@ -23,7 +23,8 @@ axios.interceptors.request.use(function (config) {
   return config
 })
 
-axios.defaults.baseURL = 'https://www.baidu.com/' // dev
+axios.defaults.baseURL = 'https://javaws01-srv.juneyaoair.com:1000/service-emp-collect/' // dev
+// axios.defaults.baseURL = 'https://micro-api2.juneyaoair.com:5000/service-emp-collect/' // prod  在用
 
 Vue.prototype.$post = function (url, data) {
   const opt = {
