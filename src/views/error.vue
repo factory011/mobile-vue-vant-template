@@ -6,14 +6,6 @@
       <div class="link"
            @click="reload">点击重新加载</div>
     </div>
-    <van-overlay :show="showLoading"
-                 @click="showLoading = false">
-      <div class="mengceng"
-           @click.stop>
-        <van-loading type="spinner"
-                     vertical>加载中...</van-loading>
-      </div>
-    </van-overlay>
   </div>
 </template>
 
@@ -21,7 +13,6 @@
 export default {
   data () {
     return {
-      showLoading: false
     }
   },
   created () {
@@ -29,8 +20,9 @@ export default {
   },
   methods: {
     reload () {
-      this.showLoading = true
+      this.$root.showLoading = true
       setTimeout(() => {
+        this.$root.showLoading = false
         this.$router.push({
           path: '/home'
         })

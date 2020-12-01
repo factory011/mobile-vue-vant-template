@@ -23,8 +23,7 @@ axios.interceptors.request.use(function (config) {
   return config
 })
 
-axios.defaults.baseURL = 'https://javaws01-srv.juneyaoair.com:1000/service-emp-collect/' // dev
-// axios.defaults.baseURL = 'https://micro-api2.juneyaoair.com:5000/service-emp-collect/' // prod  在用
+axios.defaults.baseURL = 'https://www.baidu.com/' // dev
 
 Vue.prototype.$post = function (url, data) {
   const opt = {
@@ -52,7 +51,7 @@ axios.interceptors.response.use(res => {
   if (res.data.resultCode === -3) {
     localStorage.removeItem('token')
     router.push({
-      path: '/home',
+      path: '/',
       query: {}
     })
   }
@@ -61,5 +60,10 @@ axios.interceptors.response.use(res => {
 
 new Vue({
   router,
+  data: function () {
+    return {
+      showLoading: false
+    }
+  },
   render: h => h(App)
 }).$mount('#app')
