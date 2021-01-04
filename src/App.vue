@@ -19,7 +19,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  max-width: 384px;
   max-width: 14.23rem;
   margin: 0 auto;
   .mengceng {
